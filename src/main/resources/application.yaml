@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: LibraryManagSys
+
+  h2:
+    console:
+      path: /console
+
+  datasource:
+    username: sa
+    password: 1234
+    url: jdbc:h2:mem:library
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
