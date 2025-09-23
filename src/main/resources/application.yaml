@@ -5,6 +5,7 @@ spring:
   h2:
     console:
       path: /console
+      enabled: true
 
   datasource:
     username: sa
