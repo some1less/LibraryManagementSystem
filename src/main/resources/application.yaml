@@ -14,5 +14,11 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql-data/schema.sql # specify your schema-path here, inside sql-data folder
+      data-locations: classpath:sql-data/import.sql # specify your data-path here
