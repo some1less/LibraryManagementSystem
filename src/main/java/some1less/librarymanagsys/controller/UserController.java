@@ -29,10 +29,8 @@ public class UserController {
     @PostMapping("/users")
     User newUser(@RequestBody User newUser){
 
-        // todo: create rule for checking ID while creating
-        // todo: create auto-incrementing while creating
-
         return userRepository.save(newUser);
+
     }
 
     @PutMapping("/users/{id}")
@@ -53,7 +51,6 @@ public class UserController {
     @DeleteMapping("/users/{id}")
     void deleteUser(@PathVariable int id){
 
-        // todo: create other classes that will allow to create Lists for cascade deleting
         userRepository.deleteById(id);
     }
 

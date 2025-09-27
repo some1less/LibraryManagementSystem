@@ -1,77 +1,137 @@
--- PUBLISHER (10)
-INSERT INTO Publisher (id, name, address, phoneNumber) VALUES
-                                                           (1, 'HarperCollins', '195 Broadway, New York', '111-111-1111'),
-                                                           (2, 'Penguin Books', '80 Strand, London', '222-222-2222'),
-                                                           (3, 'Macmillan', '120 Broadway, New York', '333-333-3333'),
-                                                           (4, 'Simon & Schuster', '1230 Avenue of the Americas, NY', '444-444-4444'),
-                                                           (5, 'Random House', '1745 Broadway, NY', '555-555-5555'),
-                                                           (6, 'Oxford Press', 'Great Clarendon Street, Oxford', '666-666-6666'),
-                                                           (7, 'Cambridge Press', 'Shaftesbury Rd, Cambridge', '777-777-7777'),
-                                                           (8, 'Springer', 'Tiergartenstr. 17, Berlin', '888-888-8888'),
-                                                           (9, 'Pearson', '246 High Holborn, London', '999-999-9999'),
-                                                           (10, 'Wiley', '111 River St, Hoboken', '101-101-1010');
+-- Publishers (20)
+INSERT INTO Publisher (name, address, phone_number) VALUES
+                                                        ('O’Reilly Media', 'Sebastopol, USA', '+1-707-827-7000'),
+                                                        ('Springer', 'Berlin, Germany', '+49-30-827-870'),
+                                                        ('PWN', 'Warsaw, Poland', '+48-22-695-4000'),
+                                                        ('Pearson', 'London, UK', '+44-20-7010-2000'),
+                                                        ('Manning', 'Shelter Island, USA', '+1-800-555-1212'),
+                                                        ('Packt', 'Birmingham, UK', '+44-121-265-6484'),
+                                                        ('Apress', 'New York, USA', '+1-212-555-7777'),
+                                                        ('Elsevier', 'Amsterdam, NL', '+31-20-485-3911'),
+                                                        ('MIT Press', 'Cambridge, USA', '+1-617-253-5646'),
+                                                        ('No Starch Press', 'San Francisco, USA', '+1-415-863-9900'),
+                                                        ('Wiley', 'Hoboken, USA', '+1-201-748-6000'),
+                                                        ('CRC Press', 'Boca Raton, USA', '+1-561-998-2500'),
+                                                        ('McGraw-Hill', 'New York, USA', '+1-646-231-2000'),
+                                                        ('Addison-Wesley', 'Boston, USA', '+1-800-888-8888'),
+                                                        ('Cambridge University Press', 'Cambridge, UK', '+44-1223-312-393'),
+                                                        ('Oxford University Press', 'Oxford, UK', '+44-1865-556767'),
+                                                        ('SAP Press', 'Walldorf, Germany', '+49-6227-747474'),
+                                                        ('Hanser', 'Munich, Germany', '+49-89-998-300'),
+                                                        ('Prentice Hall', 'Upper Saddle River, USA', '+1-201-236-7130'),
+                                                        ('Sams Publishing', 'Indianapolis, USA', '+1-317-555-9090');
 
--- BOOK (10)
-INSERT INTO Book (id, title, author, publisherId, publicationYear, isbn) VALUES
-                                                                             (1, 'The Great Gatsby', 'F. Scott Fitzgerald', 1, 1925, '9780001'),
-                                                                             (2, '1984', 'George Orwell', 2, 1949, '9780002'),
-                                                                             (3, 'To Kill a Mockingbird', 'Harper Lee', 3, 1960, '9780003'),
-                                                                             (4, 'Moby Dick', 'Herman Melville', 4, 1851, '9780004'),
-                                                                             (5, 'War and Peace', 'Leo Tolstoy', 5, 1869, '9780005'),
-                                                                             (6, 'Hamlet', 'William Shakespeare', 6, 1603, '9780006'),
-                                                                             (7, 'Pride and Prejudice', 'Jane Austen', 7, 1813, '9780007'),
-                                                                             (8, 'The Odyssey', 'Homer', 8, -700, '9780008'),
-                                                                             (9, 'Crime and Punishment', 'Fyodor Dostoevsky', 9, 1866, '9780009'),
-                                                                             (10, 'The Divine Comedy', 'Dante Alighieri', 10, 1320, '9780010');
+-- Books (20) – зверни увагу: publisher_Id мусить існувати, тут 1–20 з вище
+INSERT INTO Book (title, author, publisher_Id, publication_Year, isbn) VALUES
+                                                                           ('Effective Java', 'Joshua Bloch', 1, 2018, '9780134685991'),
+                                                                           ('Clean Code', 'Robert C. Martin', 1, 2008, '9780132350884'),
+                                                                           ('Spring in Action', 'Craig Walls', 2, 2021, '9781617297571'),
+                                                                           ('Design Patterns', 'GoF', 4, 1994, '9780201633610'),
+                                                                           ('Java Concurrency in Practice', 'Brian Goetz', 1, 2006, '9780321349606'),
+                                                                           ('Algorithms', 'Robert Sedgewick', 3, 2011, '9780321573513'),
+                                                                           ('Refactoring', 'Martin Fowler', 5, 2018, '9780134757599'),
+                                                                           ('The Pragmatic Programmer', 'Andrew Hunt', 10, 2019, '9780135957059'),
+                                                                           ('Artificial Intelligence', 'Russell & Norvig', 11, 2020, '9780134610993'),
+                                                                           ('Database System Concepts', 'Silberschatz', 11, 2020, '9780078022159'),
+                                                                           ('Operating Systems', 'Andrew Tanenbaum', 8, 2015, '9780133591620'),
+                                                                           ('Computer Networks', 'Andrew Tanenbaum', 8, 2011, '9780132126953'),
+                                                                           ('Deep Learning', 'Ian Goodfellow', 9, 2016, '9780262035613'),
+                                                                           ('Python Crash Course', 'Eric Matthes', 10, 2019, '9781593279288'),
+                                                                           ('JavaScript: The Good Parts', 'Douglas Crockford', 19, 2008, '9780596517748'),
+                                                                           ('You Don’t Know JS', 'Kyle Simpson', 10, 2015, '9781491904244'),
+                                                                           ('C Programming Language', 'Kernighan & Ritchie', 14, 1988, '9780131103627'),
+                                                                           ('Software Engineering', 'Ian Sommerville', 11, 2016, '9780133943030'),
+                                                                           ('Head First Design Patterns', 'Eric Freeman', 6, 2004, '9780596007126'),
+                                                                           ('Introduction to Algorithms', 'Cormen', 11, 2009, '9780262033848');
 
--- USERS (10)
-INSERT INTO Users (id, name, email, phone_number, address) VALUES
-                                                              (1, 'John Doe', 'john@example.com', '123-456-7890', '123 Elm St'),
-                                                              (2, 'Jane Smith', 'jane@example.com', '234-567-8901', '456 Oak St'),
-                                                              (3, 'Alice Johnson', 'alice@example.com', '345-678-9012', '789 Pine St'),
-                                                              (4, 'Bob Brown', 'bob@example.com', '456-789-0123', '321 Cedar St'),
-                                                              (5, 'Charlie Davis', 'charlie@example.com', '567-890-1234', '654 Maple St'),
-                                                              (6, 'Diana Evans', 'diana@example.com', '678-901-2345', '987 Birch St'),
-                                                              (7, 'Frank Green', 'frank@example.com', '789-012-3456', '147 Walnut St'),
-                                                              (8, 'Grace Hill', 'grace@example.com', '890-123-4567', '258 Chestnut St'),
-                                                              (9, 'Henry Irving', 'henry@example.com', '901-234-5678', '369 Willow St'),
-                                                              (10, 'Ivy Johnson', 'ivy@example.com', '012-345-6789', '159 Ash St');
+-- Users (20)
+INSERT INTO Users (name, email, phone_number, address) VALUES
+                                                           ('Andrii Dyma', 'andrii@example.com', '+48-500-111-222', 'Warsaw, Poland'),
+                                                           ('Anna Kowalska', 'anna.k@example.com', '+48-600-333-444', 'Krakow, Poland'),
+                                                           ('John Smith', 'john.smith@example.com', '+1-408-123-4567', 'San Jose, USA'),
+                                                           ('Maria Lopez', 'maria.lopez@example.com', '+34-91-123-4567', 'Madrid, Spain'),
+                                                           ('Hans Müller', 'hans.mueller@example.com', '+49-30-123456', 'Berlin, Germany'),
+                                                           ('Sophie Dubois', 'sophie.dubois@example.com', '+33-1-23456789', 'Paris, France'),
+                                                           ('Luca Rossi', 'luca.rossi@example.com', '+39-06-9876543', 'Rome, Italy'),
+                                                           ('Emily Johnson', 'emily.j@example.com', '+44-20-1234-5678', 'London, UK'),
+                                                           ('Akira Tanaka', 'akira.t@example.com', '+81-3-1234-5678', 'Tokyo, Japan'),
+                                                           ('Chen Wei', 'chen.wei@example.com', '+86-10-1234-5678', 'Beijing, China'),
+                                                           ('Ahmed Ali', 'ahmed.ali@example.com', '+20-2-1234-5678', 'Cairo, Egypt'),
+                                                           ('Fatima Khan', 'fatima.khan@example.com', '+92-51-1234567', 'Islamabad, Pakistan'),
+                                                           ('Carlos Silva', 'carlos.silva@example.com', '+55-11-1234-5678', 'Sao Paulo, Brazil'),
+                                                           ('Ivan Petrov', 'ivan.petrov@example.com', '+7-495-123-4567', 'Moscow, Russia'),
+                                                           ('Yulia Ivanenko', 'yulia.i@example.com', '+380-44-123-4567', 'Kyiv, Ukraine'),
+                                                           ('David Cohen', 'david.cohen@example.com', '+972-3-123-4567', 'Tel Aviv, Israel'),
+                                                           ('Peter Novak', 'peter.novak@example.com', '+421-2-123-4567', 'Bratislava, Slovakia'),
+                                                           ('Katarzyna Nowak', 'k.nowak@example.com', '+48-22-765-4321', 'Gdansk, Poland'),
+                                                           ('Marek Zielinski', 'marek.z@example.com', '+48-12-765-4321', 'Krakow, Poland'),
+                                                           ('Olga Smirnova', 'olga.s@example.com', '+7-812-123-4567', 'Saint Petersburg, Russia');
 
--- LIBRARIAN (10) → зв’язок 1:1 з USERS
-INSERT INTO Librarian (id, userId, employmentDate, position) VALUES
-                                                                 (1, 1, '2020-01-15', 'Chief Librarian'),
-                                                                 (2, 2, '2021-03-22', 'Assistant Librarian'),
-                                                                 (3, 3, '2019-07-10', 'Archivist'),
-                                                                 (4, 4, '2022-09-01', 'Cataloger'),
-                                                                 (5, 5, '2020-05-18', 'Reference Librarian'),
-                                                                 (6, 6, '2018-11-25', 'Children Librarian'),
-                                                                 (7, 7, '2017-08-14', 'Media Specialist'),
-                                                                 (8, 8, '2021-12-03', 'Systems Librarian'),
-                                                                 (9, 9, '2016-04-07', 'Library Assistant'),
-                                                                 (10, 10, '2022-02-11', 'Research Librarian');
+-- Copies (20) – book_Id має існувати (тут 1–20)
+INSERT INTO Copy (book_Id, copy_number, status) VALUES
+                                                    (1, 1, 'Available'),
+                                                    (1, 2, 'Borrowed'),
+                                                    (2, 1, 'Available'),
+                                                    (3, 1, 'Available'),
+                                                    (4, 1, 'Borrowed'),
+                                                    (5, 1, 'Available'),
+                                                    (6, 1, 'Available'),
+                                                    (7, 1, 'Available'),
+                                                    (8, 1, 'Borrowed'),
+                                                    (9, 1, 'Available'),
+                                                    (10, 1, 'Available'),
+                                                    (11, 1, 'Borrowed'),
+                                                    (12, 1, 'Available'),
+                                                    (13, 1, 'Available'),
+                                                    (14, 1, 'Available'),
+                                                    (15, 1, 'Borrowed'),
+                                                    (16, 1, 'Available'),
+                                                    (17, 1, 'Available'),
+                                                    (18, 1, 'Available'),
+                                                    (19, 1, 'Available');
 
--- COPY (10)
-INSERT INTO Copy (id, bookId, copyNumber, status) VALUES
-                                                      (1, 1, 1, 'Available'),
-                                                      (2, 1, 2, 'Borrowed'),
-                                                      (3, 2, 1, 'Available'),
-                                                      (4, 3, 1, 'Available'),
-                                                      (5, 4, 1, 'Borrowed'),
-                                                      (6, 5, 1, 'Available'),
-                                                      (7, 6, 1, 'Withdrawn'),
-                                                      (8, 7, 1, 'Available'),
-                                                      (9, 8, 1, 'Available'),
-                                                      (10, 9, 1, 'Borrowed');
+-- Borrowings (20) – user_Id і copy_Id мають існувати
+INSERT INTO Borrowing (user_Id, copy_Id, borrow_date, return_date) VALUES
+                                                                       (1, 2, '2025-09-01', NULL),
+                                                                       (2, 5, '2025-09-10', '2025-09-20'),
+                                                                       (3, 8, '2025-09-15', NULL),
+                                                                       (4, 11, '2025-09-12', '2025-09-25'),
+                                                                       (5, 15, '2025-09-08', NULL),
+                                                                       (6, 2, '2025-09-05', NULL),
+                                                                       (7, 5, '2025-09-07', '2025-09-18'),
+                                                                       (8, 8, '2025-09-11', NULL),
+                                                                       (9, 11, '2025-09-14', '2025-09-19'),
+                                                                       (10, 15, '2025-09-20', NULL),
+                                                                       (11, 2, '2025-09-21', NULL),
+                                                                       (12, 5, '2025-09-22', NULL),
+                                                                       (13, 8, '2025-09-23', NULL),
+                                                                       (14, 11, '2025-09-24', NULL),
+                                                                       (15, 15, '2025-09-25', NULL),
+                                                                       (16, 2, '2025-09-26', NULL),
+                                                                       (17, 5, '2025-09-27', NULL),
+                                                                       (18, 8, '2025-09-28', NULL),
+                                                                       (19, 11, '2025-09-29', NULL),
+                                                                       (20, 15, '2025-09-30', NULL);
 
--- BORROWING (10) → зв’язки з Users і Copy
-INSERT INTO Borrowing (id, userId, copyId, borrowDate, returnDate) VALUES
-                                                                       (1, 1, 2, '2023-01-10', NULL),
-                                                                       (2, 2, 5, '2023-02-15', '2023-03-01'),
-                                                                       (3, 3, 10, '2023-03-20', NULL),
-                                                                       (4, 4, 3, '2023-04-05', '2023-04-20'),
-                                                                       (5, 5, 4, '2023-05-12', NULL),
-                                                                       (6, 6, 6, '2023-06-01', '2023-06-15'),
-                                                                       (7, 7, 7, '2023-07-07', NULL),
-                                                                       (8, 8, 8, '2023-08-18', '2023-09-01'),
-                                                                       (9, 9, 9, '2023-09-23', NULL),
-                                                                       (10, 10, 1, '2023-10-11', '2023-10-25');
+-- Librarians (20) – user_Id має існувати
+INSERT INTO Librarian (user_Id, employment_date, position) VALUES
+                                                               (1, '2020-01-15', 'Head Librarian'),
+                                                               (2, '2021-03-20', 'Assistant Librarian'),
+                                                               (3, '2022-06-01', 'Archivist'),
+                                                               (4, '2019-09-12', 'Cataloguer'),
+                                                               (5, '2018-11-30', 'Senior Librarian'),
+                                                               (6, '2020-02-10', 'Library Assistant'),
+                                                               (7, '2019-05-05', 'Junior Librarian'),
+                                                               (8, '2021-07-07', 'Deputy Librarian'),
+                                                               (9, '2022-01-25', 'Media Specialist'),
+                                                               (10, '2017-08-18', 'Research Librarian'),
+                                                               (11, '2020-12-01', 'Digital Resources Manager'),
+                                                               (12, '2019-10-10', 'Community Librarian'),
+                                                               (13, '2018-04-22', 'Children’s Librarian'),
+                                                               (14, '2021-11-11', 'Reference Librarian'),
+                                                               (15, '2022-02-14', 'Outreach Librarian'),
+                                                               (16, '2016-09-09', 'Library Technician'),
+                                                               (17, '2015-12-12', 'Senior Cataloguer'),
+                                                               (18, '2023-01-01', 'Library Intern'),
+                                                               (19, '2019-03-03', 'Library Coordinator'),
+                                                               (20, '2020-05-05', 'Acquisitions Librarian');
